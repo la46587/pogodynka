@@ -68,12 +68,17 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         // line 10
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
         // line 13
-        yield "    </head>
+        yield "        <style>
+            body {
+                background: url(\"https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=46587\");
+            }
+        </style>
+    </head>
     <body>
         ";
-        // line 15
+        // line 20
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 16
+        // line 21
         yield "    </body>
 </html>
 ";
@@ -183,7 +188,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         yield from [];
     }
 
-    // line 15
+    // line 20
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -218,7 +223,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  187 => 15,  164 => 11,  153 => 12,  150 => 11,  137 => 10,  126 => 8,  113 => 7,  90 => 5,  77 => 16,  75 => 15,  71 => 13,  69 => 10,  66 => 9,  64 => 7,  59 => 5,  53 => 1,);
+        return array (  192 => 20,  169 => 11,  158 => 12,  155 => 11,  142 => 10,  131 => 8,  118 => 7,  95 => 5,  82 => 21,  80 => 20,  71 => 13,  69 => 10,  66 => 9,  64 => 7,  59 => 5,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -235,6 +240,11 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+        <style>
+            body {
+                background: url(\"https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=46587\");
+            }
+        </style>
     </head>
     <body>
         {% block body %}{% endblock %}

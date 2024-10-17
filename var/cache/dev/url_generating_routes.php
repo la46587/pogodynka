@@ -17,4 +17,6 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
+    'app_weather' => [['country', 'cityName'], ['_controller' => 'App\\Controller\\WeatherController::country'], [], [['variable', '/', '[^/]++', 'cityName', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/weather']], [], [], []],
+    'App\Controller\WeatherController::city' => [['country', 'cityName'], ['_controller' => 'App\\Controller\\WeatherController::country'], [], [['variable', '/', '[^/]++', 'cityName', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/weather']], [], [], []],
 ];

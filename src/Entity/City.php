@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CityRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CityRepository::class)]
@@ -26,6 +27,12 @@ class City
      */
     #[ORM\OneToMany(targetEntity: Forecast::class, mappedBy: 'city')]
     private Collection $forecasts;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 7)]
+    private ?string $latitude = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 7)]
+    private ?string $longitude = null;
 
     public function __construct()
     {
@@ -87,6 +94,30 @@ class City
                 $forecast->setCity(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLatitude(): ?string
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(string $latitude): static
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?string
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(string $longitude): static
+    {
+        $this->longitude = $longitude;
 
         return $this;
     }

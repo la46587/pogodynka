@@ -15,11 +15,10 @@ class Forecast
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'forecasts')]
-    #[ORM\JoinColumn(nullable: false)]
     private ?City $city = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $time = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: 0)]
     private ?string $temperature = null;
@@ -50,14 +49,14 @@ class Forecast
         return $this;
     }
 
-    public function getTime(): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->time;
+        return $this->date;
     }
 
-    public function setTime(\DateTimeInterface $time): static
+    public function setDate(\DateTimeInterface $date): static
     {
-        $this->time = $time;
+        $this->date = $date;
 
         return $this;
     }
