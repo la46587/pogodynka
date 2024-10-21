@@ -49,7 +49,7 @@ class City
         return $this->cityName;
     }
 
-    public function setCityName(string $cityName): static
+    public function setCityName(string $cityName = null): static
     {
         $this->cityName = $cityName;
 
@@ -103,7 +103,7 @@ class City
         return $this->latitude;
     }
 
-    public function setLatitude(string $latitude): static
+    public function setLatitude(string $latitude = null): static
     {
         $this->latitude = $latitude;
 
@@ -115,7 +115,7 @@ class City
         return $this->longitude;
     }
 
-    public function setLongitude(string $longitude): static
+    public function setLongitude(string $longitude = null): static
     {
         $this->longitude = $longitude;
 

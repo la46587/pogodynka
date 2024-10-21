@@ -42,7 +42,7 @@ class Forecast
         return $this->city;
     }
 
-    public function setCity(?City $city): static
+    public function setCity(?City $city = null): static
     {
         $this->city = $city;
 
@@ -54,7 +54,7 @@ class Forecast
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate(\DateTimeInterface $date = null): static
     {
         $this->date = $date;
 
@@ -66,7 +66,7 @@ class Forecast
         return $this->temperature;
     }
 
-    public function setTemperature(string $temperature): static
+    public function setTemperature(string $temperature = null): static
     {
         $this->temperature = $temperature;
 
@@ -78,7 +78,7 @@ class Forecast
         return $this->humidity;
     }
 
-    public function setHumidity(int $humidity): static
+    public function setHumidity(int $humidity = null): static
     {
         $this->humidity = $humidity;
 
@@ -90,7 +90,7 @@ class Forecast
         return $this->pressure;
     }
 
-    public function setPressure(int $pressure): static
+    public function setPressure(int $pressure = null): static
     {
         $this->pressure = $pressure;
 
@@ -102,7 +102,7 @@ class Forecast
         return $this->description;
     }
 
-    public function setDescription(string $description): static
+    public function setDescription(string $description = null): static
     {
         $this->description = $description;
 
