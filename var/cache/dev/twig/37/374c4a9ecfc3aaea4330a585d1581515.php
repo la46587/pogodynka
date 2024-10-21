@@ -73,7 +73,7 @@ class __TwigTemplate_39a6b777b24816ee17f4fc2fc55a6efb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Edit Forecast";
+        yield "Edit a Forecast";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,7 +97,7 @@ class __TwigTemplate_39a6b777b24816ee17f4fc2fc55a6efb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Edit Forecast</h1>
+        yield "    <h1>Edit a Forecast</h1>
 
     ";
         // line 8
@@ -151,10 +151,10 @@ class __TwigTemplate_39a6b777b24816ee17f4fc2fc55a6efb extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit Forecast{% endblock %}
+{% block title %}Edit a Forecast{% endblock %}
 
 {% block body %}
-    <h1>Edit Forecast</h1>
+    <h1>Edit a Forecast</h1>
 
     {{ include('forecast/_form.html.twig', {'button_label': 'Update'}) }}
 

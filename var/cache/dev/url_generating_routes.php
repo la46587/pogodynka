@@ -28,6 +28,7 @@ return [
     'app_forecast_edit' => [['id'], ['_controller' => 'App\\Controller\\ForecastController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/forecast']], [], [], []],
     'app_forecast_delete' => [['id'], ['_controller' => 'App\\Controller\\ForecastController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/forecast']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
+    'app_weather_api' => [[], ['_controller' => 'App\\Controller\\WeatherApiController::index'], [], [['text', '/api/v1/weather']], [], [], []],
     'app_weather' => [['country', 'cityName'], ['_controller' => 'App\\Controller\\WeatherController::city'], [], [['variable', '/', '[^/]++', 'cityName', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/weather']], [], [], []],
     'app_logout' => [[], [], [], [['text', '/logout']], [], [], []],
     'App\Controller\CityController::index' => [[], ['_controller' => 'App\\Controller\\CityController::index'], [], [['text', '/city']], [], [], []],
@@ -41,5 +42,6 @@ return [
     'App\Controller\ForecastController::edit' => [['id'], ['_controller' => 'App\\Controller\\ForecastController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/forecast']], [], [], []],
     'App\Controller\ForecastController::delete' => [['id'], ['_controller' => 'App\\Controller\\ForecastController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/forecast']], [], [], []],
     'App\Controller\LoginController::index' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
+    'App\Controller\WeatherApiController::index' => [[], ['_controller' => 'App\\Controller\\WeatherApiController::index'], [], [['text', '/api/v1/weather']], [], [], []],
     'App\Controller\WeatherController::city' => [['country', 'cityName'], ['_controller' => 'App\\Controller\\WeatherController::city'], [], [['variable', '/', '[^/]++', 'cityName', true], ['variable', '/', '[^/]++', 'country', true], ['text', '/weather']], [], [], []],
 ];

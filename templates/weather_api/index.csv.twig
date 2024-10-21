@@ -1,0 +1,11 @@
+city,country,date,temperature,humidity,pressure,description
+{% for forecast in forecasts %}
+{{ city }},
+{{- country }},
+{{- forecast.getDate().format('Y-m-d') }},
+{{- forecast.getTemperature() }},
+{{- forecast.getFahrenheit() }},
+{{- forecast.getHumidity() }},
+{{- forecast.getPressure() }},
+{{- forecast.getDescription() }}
+{% endfor %}
