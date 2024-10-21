@@ -73,7 +73,7 @@ class __TwigTemplate_4617c21c337544acdbad6e43a2384682 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Edit City";
+        yield "Edit a City";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,7 +97,7 @@ class __TwigTemplate_4617c21c337544acdbad6e43a2384682 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Edit City</h1>
+        yield "    <h1>Edit a City</h1>
 
     ";
         // line 8
@@ -151,10 +151,10 @@ class __TwigTemplate_4617c21c337544acdbad6e43a2384682 extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit City{% endblock %}
+{% block title %}Edit a City{% endblock %}
 
 {% block body %}
-    <h1>Edit City</h1>
+    <h1>Edit a City</h1>
 
     {{ include('city/_form.html.twig', {'button_label': 'Update'}) }}
 

@@ -140,21 +140,32 @@ class __TwigTemplate_8f72b38a23a2f1592d63ab6c4190948b extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["city"], "longitude", [], "any", false, false, false, 26), "html", null, true);
             yield "</td>
                 <td>
-                    <a href=\"";
+                    ";
             // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["city"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            yield "\">show</a>
-                    <a href=\"";
-            // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["city"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-            yield "\">edit</a>
-                </td>
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CITY_SHOW")) {
+                // line 29
+                yield "                        <a href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["city"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+                yield "\">show</a>
+                    ";
+            }
+            // line 31
+            yield "                    ";
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CITY_EDIT")) {
+                // line 32
+                yield "                        <a href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["city"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+                yield "\">edit</a>
+                    ";
+            }
+            // line 34
+            yield "                </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 33
+            // line 37
             yield "            <tr>
                 <td colspan=\"6\">no records found</td>
             </tr>
@@ -163,15 +174,19 @@ class __TwigTemplate_8f72b38a23a2f1592d63ab6c4190948b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['city'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 41
         yield "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 40
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_new");
-        yield "\">Create new</a>
-";
+    ";
+        // line 44
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CITY_NEW")) {
+            // line 45
+            yield "        <a href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_city_new");
+            yield "\">Create new</a>
+    ";
+        }
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -202,7 +217,7 @@ class __TwigTemplate_8f72b38a23a2f1592d63ab6c4190948b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  172 => 40,  167 => 37,  158 => 33,  149 => 29,  145 => 28,  140 => 26,  136 => 25,  132 => 24,  128 => 23,  124 => 22,  121 => 21,  116 => 20,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  185 => 45,  183 => 44,  178 => 41,  169 => 37,  162 => 34,  156 => 32,  153 => 31,  147 => 29,  145 => 28,  140 => 26,  136 => 25,  132 => 24,  128 => 23,  124 => 22,  121 => 21,  116 => 20,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -234,8 +249,12 @@ class __TwigTemplate_8f72b38a23a2f1592d63ab6c4190948b extends Template
                 <td>{{ city.latitude }}</td>
                 <td>{{ city.longitude }}</td>
                 <td>
-                    <a href=\"{{ path('app_city_show', {'id': city.id}) }}\">show</a>
-                    <a href=\"{{ path('app_city_edit', {'id': city.id}) }}\">edit</a>
+                    {% if is_granted('ROLE_CITY_SHOW') %}
+                        <a href=\"{{ path('app_city_show', {'id': city.id}) }}\">show</a>
+                    {% endif %}
+                    {% if is_granted('ROLE_CITY_EDIT') %}
+                        <a href=\"{{ path('app_city_edit', {'id': city.id}) }}\">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -246,7 +265,9 @@ class __TwigTemplate_8f72b38a23a2f1592d63ab6c4190948b extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_city_new') }}\">Create new</a>
+    {% if is_granted('ROLE_CITY_NEW') %}
+        <a href=\"{{ path('app_city_new') }}\">Create new</a>
+    {% endif %}
 {% endblock %}
 ", "city/index.html.twig", "C:\\Users\\insomnia\\Desktop\\pogodynka\\templates\\city\\index.html.twig");
     }

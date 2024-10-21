@@ -107,27 +107,45 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forecast_index");
         yield "\">Forecasts</a>
                 </li>
+                <li class=\"nav-item\">
+                    ";
+        // line 47
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 48
+            yield "                        <a class=\"nav-link\" href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            yield "\">Logout</a>
+                    ";
+        } else {
+            // line 50
+            yield "                        <a class=\"nav-link\" href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            yield "\">Login</a>
+                    ";
+        }
+        // line 52
+        yield "                </li>
             </ul>
         </div>
     </div>
 </nav>
 
 ";
-        // line 52
+        // line 59
         yield "<div class=\"container-sm custom-width\">
 
     ";
-        // line 54
+        // line 61
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 55
+        // line 62
         yield "</div>
 
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
 
 ";
-        // line 59
+        // line 66
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 62
+        // line 69
         yield "</body>
 </html>
 ";
@@ -187,7 +205,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         yield from [];
     }
 
-    // line 54
+    // line 61
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -209,7 +227,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         yield from [];
     }
 
-    // line 59
+    // line 66
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -222,7 +240,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 60
+        // line 67
         yield "    ";
         yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
         
@@ -277,7 +295,7 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  226 => 60,  213 => 59,  191 => 54,  180 => 12,  167 => 11,  144 => 6,  131 => 62,  129 => 59,  123 => 55,  121 => 54,  117 => 52,  107 => 44,  101 => 41,  87 => 29,  70 => 13,  68 => 11,  60 => 6,  53 => 1,);
+        return array (  244 => 67,  231 => 66,  209 => 61,  198 => 12,  185 => 11,  162 => 6,  149 => 69,  147 => 66,  141 => 62,  139 => 61,  135 => 59,  127 => 52,  121 => 50,  115 => 48,  113 => 47,  107 => 44,  101 => 41,  87 => 29,  70 => 13,  68 => 11,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -326,6 +344,13 @@ class __TwigTemplate_bd39f73ebafab274e9c0b4a7650cfc1f extends Template
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"{{ path('app_forecast_index') }}\">Forecasts</a>
+                </li>
+                <li class=\"nav-item\">
+                    {% if is_granted('ROLE_USER') %}
+                        <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Logout</a>
+                    {% else %}
+                        <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Login</a>
+                    {% endif %}
                 </li>
             </ul>
         </div>
