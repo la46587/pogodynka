@@ -119,7 +119,13 @@ class __TwigTemplate_ac87d5d38c9d3f95b0273e7be34b5d26 extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "date", [], "any", false, false, false, 14), "d.m.Y"), "html", null, true);
             yield ": ";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "temperature", [], "any", false, false, false, 14), "html", null, true);
-            yield "&deg;C</li>
+            yield "&deg;C, ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "humidity", [], "any", false, false, false, 14), "html", null, true);
+            yield "%, ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "pressure", [], "any", false, false, false, 14), "html", null, true);
+            yield " hPa, ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "description", [], "any", false, false, false, 14), "html", null, true);
+            yield "</li>
         ";
         }
         $_parent = $context['_parent'];
@@ -159,7 +165,7 @@ class __TwigTemplate_ac87d5d38c9d3f95b0273e7be34b5d26 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  129 => 16,  118 => 14,  114 => 13,  106 => 10,  103 => 9,  90 => 8,  64 => 6,  41 => 1,);
+        return array (  135 => 16,  118 => 14,  114 => 13,  106 => 10,  103 => 9,  90 => 8,  64 => 6,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -177,7 +183,7 @@ class __TwigTemplate_ac87d5d38c9d3f95b0273e7be34b5d26 extends Template
 
     <ul>
         {% for forecast in forecasts %}
-            <li>{{ forecast.date|date('d.m.Y') }}: {{ forecast.temperature }}&deg;C</li>
+            <li>{{ forecast.date|date('d.m.Y') }}: {{ forecast.temperature }}&deg;C, {{ forecast.humidity }}%, {{ forecast.pressure }} hPa, {{ forecast.description }}</li>
         {% endfor %}
     </ul>
 </main>

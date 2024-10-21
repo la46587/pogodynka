@@ -97,7 +97,7 @@ class __TwigTemplate_713968abac754f0a7904da9140501ea0 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Create new Forecast</h1>
+        yield "    <h1>Create a new Forecast</h1>
 
     ";
         // line 8
@@ -149,7 +149,7 @@ class __TwigTemplate_713968abac754f0a7904da9140501ea0 extends Template
 {% block title %}New Forecast{% endblock %}
 
 {% block body %}
-    <h1>Create new Forecast</h1>
+    <h1>Create a new Forecast</h1>
 
     {{ include('forecast/_form.html.twig') }}
 

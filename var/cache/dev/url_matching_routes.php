@@ -70,7 +70,7 @@ return [
         283 => [[['_route' => 'app_forecast_edit', '_controller' => 'App\\Controller\\ForecastController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         291 => [[['_route' => 'app_forecast_delete', '_controller' => 'App\\Controller\\ForecastController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         326 => [
-            [['_route' => 'app_weather', '_controller' => 'App\\Controller\\WeatherController::country'], ['country', 'cityName'], null, null, false, true, null],
+            [['_route' => 'app_weather', '_controller' => 'App\\Controller\\WeatherController::city'], ['country', 'cityName'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

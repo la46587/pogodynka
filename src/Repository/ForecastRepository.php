@@ -26,20 +26,22 @@ class ForecastRepository extends ServiceEntityRepository
             ->setParameter('now', date('YYYY-mm-dd'));
 
         $query = $qb->getQuery();
-        $result = $query->getResult();
-        return $result;
+        return $query->getResult();
     }
 
-    public function findByCountry(City $city)
+    public function findByCountry(string $countryCode, string $cityName)
     {
-        $qb = $this->createQueryBuilder('m');
-        $qb->where('m.city = :city')
-            ->setParameter('city', $city)
+        $qb = $this->createQueryBuilder('m')
+            ->join('m.city', 'c')
+            ->where('c.country = :countryCode')
+            ->setParameter('countryCode', $countryCode)
+            ->andWhere('c.cityName = :cityName')
+            ->setParameter('cityName', $cityName)
             ->andWhere('m.date < :now')
-            ->setParameter('now', date('YYYY-mm-dd'));
+            ->setParameter('now', date('Y-m-d'));
 
-        $query = $qb->getQuery();
-        $result = $query->getResult();
-        return $result;
+        // Pobieramy wyniki zapytania (prognozy)
+        return $qb->getQuery()->getResult();
     }
+
 }
