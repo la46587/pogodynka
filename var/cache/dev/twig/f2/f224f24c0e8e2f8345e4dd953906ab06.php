@@ -83,12 +83,9 @@ class __TwigTemplate_f04297b9df07d6ce827e59acd66c1428 extends Template
             // line 8
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getTemperature", [], "method", false, false, false, 8), "html", null, true);
             yield "\",
-            \"temperatureF\": \"";
-            // line 9
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getFahrenheit", [], "method", false, false, false, 9), "html", null, true);
-            yield "\",
-            \"humidity\": \"";
+";
             // line 10
+            yield "            \"humidity\": \"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getHumidity", [], "method", false, false, false, 10), "html", null, true);
             yield "\",
             \"pressure\": \"";
@@ -152,7 +149,7 @@ class __TwigTemplate_f04297b9df07d6ce827e59acd66c1428 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  122 => 15,  108 => 14,  104 => 13,  100 => 12,  96 => 11,  92 => 10,  88 => 9,  84 => 8,  80 => 7,  77 => 6,  60 => 5,  55 => 3,  51 => 2,  48 => 1,);
+        return array (  119 => 15,  105 => 14,  101 => 13,  97 => 12,  93 => 11,  88 => 10,  84 => 8,  80 => 7,  77 => 6,  60 => 5,  55 => 3,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -165,7 +162,7 @@ class __TwigTemplate_f04297b9df07d6ce827e59acd66c1428 extends Template
         {
             \"date\": \"{{ forecast.getDate().format('Y-m-d') }}\",
             \"temperature\": \"{{ forecast.getTemperature() }}\",
-            \"temperatureF\": \"{{ forecast.getFahrenheit() }}\",
+{#            \"temperatureF\": \"{{ forecast.getFahrenheit() }}\",#}
             \"humidity\": \"{{ forecast.getHumidity() }}\",
             \"pressure\": \"{{ forecast.getPressure() }}\",
             \"description\": \"{{ forecast.getDescription() }}\"

@@ -48,10 +48,10 @@ class WeatherCountryCommand extends Command
 
                 $io->section(sprintf('Forecast for %s, %s on %s:', $cityName, $countryCode, $forecastDate));
                 $io->text([
-                    'Temperatura: ' . $forecast->getTemperature() . ' C',
-                    'Wilgotność: ' . $forecast->getHumidity() . '%',
-                    'Ciśnienie: ' . $forecast->getPressure() . ' hPa',
-                    'Opis: ' . $forecast->getDescription(),
+                    'Temperature: ' . $forecast->getTemperature() . ' C',
+                    'Humidity: ' . $forecast->getHumidity() . '%',
+                    'Pressure: ' . $forecast->getPressure() . ' hPa',
+                    'Description: ' . $forecast->getDescription(),
                 ]);
             }
         }

@@ -62,10 +62,8 @@ class __TwigTemplate_282eddb6100db0a3f4d3f468e299c1b4 extends Template
             yield ",";
             // line 6
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getTemperature", [], "method", false, false, false, 6), "html", null, true);
-            yield ",";
-            // line 7
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getFahrenheit", [], "method", false, false, false, 7), "html", null, true);
-            yield ",";
+            yield ",
+";
             // line 8
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["forecast"], "getHumidity", [], "method", false, false, false, 8), "html", null, true);
             yield ",";
@@ -110,7 +108,7 @@ class __TwigTemplate_282eddb6100db0a3f4d3f468e299c1b4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  76 => 10,  73 => 9,  70 => 8,  67 => 7,  64 => 6,  61 => 5,  58 => 4,  55 => 3,  51 => 2,  48 => 1,);
+        return array (  74 => 10,  71 => 9,  68 => 8,  64 => 6,  61 => 5,  58 => 4,  55 => 3,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -121,7 +119,7 @@ class __TwigTemplate_282eddb6100db0a3f4d3f468e299c1b4 extends Template
 {{- country }},
 {{- forecast.getDate().format('Y-m-d') }},
 {{- forecast.getTemperature() }},
-{{- forecast.getFahrenheit() }},
+{#{{- forecast.getFahrenheit() }},#}
 {{- forecast.getHumidity() }},
 {{- forecast.getPressure() }},
 {{- forecast.getDescription() }}
