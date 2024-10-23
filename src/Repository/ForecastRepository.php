@@ -23,7 +23,7 @@ class ForecastRepository extends ServiceEntityRepository
         $qb->where('m.city = :city')
             ->setParameter('city', $city)
             ->andWhere('m.date > :now')
-            ->setParameter('now', date('YYYY-mm-dd'));
+            ->setParameter('now', date('Y-m-d'));
 
         $query = $qb->getQuery();
         return $query->getResult();
