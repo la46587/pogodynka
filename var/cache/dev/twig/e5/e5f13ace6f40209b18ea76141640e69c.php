@@ -97,7 +97,7 @@ class __TwigTemplate_19c4a985546386d0ce3624d9cfd4ebcf extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Create new City</h1>
+        yield "    <h1>Create a new City</h1>
 
     ";
         // line 8
@@ -149,7 +149,7 @@ class __TwigTemplate_19c4a985546386d0ce3624d9cfd4ebcf extends Template
 {% block title %}New City{% endblock %}
 
 {% block body %}
-    <h1>Create new City</h1>
+    <h1>Create a new City</h1>
 
     {{ include('city/_form.html.twig') }}
 

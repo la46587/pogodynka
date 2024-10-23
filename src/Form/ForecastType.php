@@ -33,6 +33,7 @@ class ForecastType extends AbstractType
                     'cloudy' => 'cloudy',
                     'rainy' => 'rainy',
                     'stormy' => 'stormy',
+                    'snowy' => 'snowy',
                 ],
             ])
             ->add('city', EntityType::class, [
